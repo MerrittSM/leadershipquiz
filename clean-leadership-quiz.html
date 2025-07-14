@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Leadership Style Assessment | Master of One Coaching</title>
+    <meta name="description" content="Discover your unique creative leadership style. Free assessment for executives in entertainment, innovation, culture, and the arts.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .brand {
+            margin-bottom: 40px;
+        }
+
+        .brand-title {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .brand-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .divider-line {
+            width: 40px;
+            height: 1px;
+            background: #dab52f;
+        }
+
+        .star {
+            width: 25px;
+            height: 25px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #374151;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #111827 0%, #374151 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid #dab52f;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: none;
+        }
+
+        .quiz-header {
+            background: linear-gradient(135deg, #111827 0%, #374151 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .quiz-brand {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .quiz-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .quiz-subtitle {
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            margin-top: 20px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .progress-bar {
+            background: #4b5563;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: #dab52f;
+            height: 100%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .quiz-body {
+            padding: 40px;
+        }
+
+        .question {
+            font-size: 24px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-size: 16px;
+            color: #374151;
+        }
+
+        .option:hover {
+            background: #fef3c7;
+            border-color: #dab52f;
+            transform: translateY(-2px);
+        }
+
+        /* Email Capture */
+        .email-capture {
+            padding: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .email-capture h2 {
+            font-size: 36px;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .email-capture p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #dab52f;
+        }
+
+        .submit-btn {
+            background: #dab52f;
+            color: #111827;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+        }
+
+        .skip-btn {
+            background: none;
+            border: none;
+            color: #6b7280;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* Results */
+        .results {
+            padding: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .results-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .results-description {
+            font-size: 18px;
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #fef3c7 0%, #dab52f 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            color: #111827;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            background: #111827;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background: #374151;
+            transform: translateY(-2px);
+        }
+
+        /* Lead Display */
+        .lead-display {
+            background: #f0f9ff;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .lead-display h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .lead-data {
+            font-family: monospace;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            white-space: pre-line;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .admin-panel {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .admin-panel h3 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .admin-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .leads-count {
+            background: #17a2b8;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .quiz-body {
+                padding: 20px;
+            }
+            
+            .question {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div id="heroSection" class="hero">
+            <div class="brand">
+                <div class="brand-title">MASTER OF ONE COACHING, LLC</div>
+                <div class="brand-divider">
+                    <div class="divider-line"></div>
+                    <svg class="star" viewBox="0 0 100 100">
+                        <path d="M50 20 L55 45 L80 50 L55 55 L50 80 L45 55 L20 50 L45 45 Z" fill="#dab52f"/>
+                    </svg>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <h1 class="hero-title">Discover Your Creative Leadership Style</h1>
+            <p class="hero-subtitle">Free Assessment for Creative Executives</p>
+            <p class="hero-description">
+                A 13-question assessment designed specifically for leaders in entertainment, innovation, culture, and the arts. 
+                Get personalized insights to maximize your leadership impact.
+            </p>
+            
+            <button class="start-btn" onclick="startQuiz()">Take the Assessment</button>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" class="quiz-container">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <div class="quiz-brand">MASTER OF ONE COACHING, LLC</div>
+                <div class="quiz-title">Creative Leadership Assessment</div>
+                <div class="quiz-subtitle">Discover Your Leadership Style</div>
+                
+                <div class="progress">
+                    <div class="progress-info">
+                        <span id="progressText">Question 1 of 13</span>
+                        <span id="progressPercent">8% Complete</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 8%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div id="questionSection" class="quiz-body">
+                <div class="question" id="questionText">Loading question...</div>
+                <div class="options" id="optionsContainer">
+                    <!-- Options populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Email Capture -->
+            <div id="emailSection" class="email-capture">
+                <h2>🎉 Assessment Complete!</h2>
+                <p>Enter your details to receive your personalized leadership profile</p>
+                
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" id="firstName" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    
+                    <button class="submit-btn" onclick="submitLead()">Get My Leadership Profile</button>
+                    <button class="skip-btn" onclick="skipEmail()">Skip and see results</button>
+                </div>
+
+                <!-- Lead Confirmation -->
+                <div id="leadConfirmation" class="lead-display hidden">
+                    <h3>✅ Information Captured Successfully!</h3>
+                    <div class="lead-data" id="leadData"></div>
+                    <button class="copy-btn" onclick="copyCurrentLead()">Copy Lead Data</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsSection" class="results">
+                <div class="brand" style="margin-bottom: 30px;">
+                    <div class="brand-title">MASTER OF ONE COACHING, LLC</div>
+                    <div class="brand-divider">
+                        <div class="divider-line"></div>
+                        <svg class="star" viewBox="0 0 100 100">
+                            <path d="M50 20 L55 45 L80 50 L55 55 L50 80 L45 55 L20 50 L45 45 Z" fill="#dab52f"/>
+                        </svg>
+                        <div class="divider-line"></div>
+                    </div>
+                </div>
+                
+                <div id="resultsContent">
+                    <!-- Results populated by JavaScript -->
+                </div>
+                
+                <div class="cta">
+                    <p class="cta-text">"Ready to take your leadership to the next level? Master of One Coaching specializes in developing executives like you."</p>
+                    <a href="https://masterofonecoaching.com/contact" class="cta-btn">Schedule a Consultation</a>
+                </div>
+                
+                <button class="submit-btn" onclick="restartQuiz()" style="max-width: 200px;">Take Assessment Again</button>
+            </div>
+        </div>
+
+        <!-- Admin Panel - Only visible with special access -->
+        <div class="admin-panel" id="adminPanel">
+            <h3>📊 Lead Management <span class="leads-count" id="leadsCount">0 leads</span></h3>
+            <button class="admin-btn" onclick="viewAllLeads()">View All Leads</button>
+            <button class="admin-btn" onclick="exportLeads()">Export CSV</button>
+            <button class="admin-btn" onclick="clearAllLeads()">Clear All Data</button>
+            
+            <div id="leadsDisplay" class="hidden" style="margin-top: 15px;">
+                <div style="max-height: 300px; overflow-y: auto; background: white; padding: 15px; border-radius: 5px;">
+                    <div id="leadsContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        var questions = [
+            {
+                question: "When starting a new creative project, you typically:",
+                options: [
+                    { text: "Dive deep into research and competitive analysis first", style: "strategic" },
+                    { text: "Gather the team for a brainstorming session", style: "collaborative" },
+                    { text: "Sketch out a bold, unconventional approach", style: "visionary" },
+                    { text: "Start by understanding the human impact and purpose behind the work", style: "empathetic" }
+                ]
+            },
+            {
+                question: "Your team is facing a creative block. You:",
+                options: [
+                    { text: "Change the environment - take them somewhere inspiring", style: "visionary" },
+                    { text: "Break down the problem into smaller, manageable pieces", style: "strategic" },
+                    { text: "Encourage everyone to share their wildest ideas without judgment", style: "collaborative" },
+                    { text: "Share a personal story that relates to the challenge", style: "empathetic" }
+                ]
+            },
+            {
+                question: "When presenting ideas to stakeholders, you:",
+                options: [
+                    { text: "Create a compelling narrative that connects emotionally", style: "empathetic" },
+                    { text: "Present multiple strategic options with clear rationales", style: "strategic" },
+                    { text: "Paint a vivid picture of the transformative potential", style: "visionary" },
+                    { text: "Involve them in refining the concept together", style: "collaborative" }
+                ]
+            },
+            {
+                question: "Your ideal creative workspace would be:",
+                options: [
+                    { text: "An open studio where ideas flow freely between team members", style: "collaborative" },
+                    { text: "A thoughtfully designed space that adapts to different project needs", style: "strategic" },
+                    { text: "A inspiring environment that sparks unexpected connections", style: "visionary" },
+                    { text: "A welcoming space where everyone feels comfortable being vulnerable", style: "empathetic" }
+                ]
+            },
+            {
+                question: "When giving feedback on creative work, you:",
+                options: [
+                    { text: "Focus on how it serves the bigger picture and objectives", style: "strategic" },
+                    { text: "Ask questions that help the creator discover improvements", style: "collaborative" },
+                    { text: "Challenge them to push boundaries even further", style: "visionary" },
+                    { text: "Consider how the feedback will land emotionally first", style: "empathetic" }
+                ]
+            },
+            {
+                question: "Your approach to creative risk-taking is:",
+                options: [
+                    { text: "Calculated risks based on thorough analysis", style: "strategic" },
+                    { text: "Risks that the whole team feels excited about", style: "collaborative" },
+                    { text: "Bold leaps that could redefine the industry", style: "visionary" },
+                    { text: "Risks that consider impact on all stakeholders", style: "empathetic" }
+                ]
+            },
+            {
+                question: "When a project isn't working, you:",
+                options: [
+                    { text: "Reimagine it from a completely different angle", style: "visionary" },
+                    { text: "Analyze what's not working and adjust systematically", style: "strategic" },
+                    { text: "Bring the team together to troubleshoot collectively", style: "collaborative" },
+                    { text: "Have honest conversations about what everyone is feeling", style: "empathetic" }
+                ]
+            },
+            {
+                question: "Your leadership philosophy centers on:",
+                options: [
+                    { text: "Building systems that enable consistent creative excellence", style: "strategic" },
+                    { text: "Creating conditions where everyone can do their best work", style: "collaborative" },
+                    { text: "Inspiring others to see possibilities they never imagined", style: "visionary" },
+                    { text: "Understanding and nurturing each person's unique potential", style: "empathetic" }
+                ]
+            },
+            {
+                question: "When conflict arises in your creative team, you:",
+                options: [
+                    { text: "Address it directly, focusing on the work and objectives", style: "strategic" },
+                    { text: "Facilitate a discussion to find common ground", style: "collaborative" },
+                    { text: "Reframe the conflict as creative tension that can fuel innovation", style: "visionary" },
+                    { text: "Take time to understand each person's perspective privately first", style: "empathetic" }
+                ]
+            },
+            {
+                question: "Your decision-making process typically involves:",
+                options: [
+                    { text: "Listening deeply to understand the human impact", style: "empathetic" },
+                    { text: "Weighing data, precedent, and strategic implications", style: "strategic" },
+                    { text: "Trusting your intuition about what feels breakthrough", style: "visionary" },
+                    { text: "Seeking input from diverse perspectives before deciding", style: "collaborative" }
+                ]
+            },
+            {
+                question: "You measure creative success by:",
+                options: [
+                    { text: "Whether it achieved the strategic objectives efficiently", style: "strategic" },
+                    { text: "How engaged and proud the team feels about the work", style: "collaborative" },
+                    { text: "Whether it challenges conventions and opens new possibilities", style: "visionary" },
+                    { text: "The positive impact it has on people's lives", style: "empathetic" }
+                ]
+            },
+            {
+                question: "Your long-term vision for creative leadership is:",
+                options: [
+                    { text: "Building sustainable systems for creative excellence", style: "strategic" },
+                    { text: "Developing the next generation of creative leaders", style: "collaborative" },
+                    { text: "Pioneering new ways of thinking about creativity and business", style: "visionary" },
+                    { text: "Creating more human-centered approaches to creative work", style: "empathetic" }
+                ]
+            },
+            {
+                question: "When facing budget constraints that could impact your creative programming, you:",
+                options: [
+                    { text: "Develop a strategic plan to maintain quality while optimizing resources", style: "strategic" },
+                    { text: "Engage your team to brainstorm innovative, cost-effective alternatives", style: "collaborative" },
+                    { text: "Reimagine the constraints as an opportunity for breakthrough creativity", style: "visionary" },
+                    { text: "Prioritize the programs that serve your community's deepest needs", style: "empathetic" }
+                ]
+            }
+        ];
+
+        var leadershipStyles = {
+            strategic: {
+                title: "The Strategic Architect",
+                description: "You excel at building systems and frameworks that enable consistent creative excellence. Your strength lies in balancing artistic vision with practical execution, making you particularly effective at leading organizations through complex challenges while maintaining high standards."
+            },
+            collaborative: {
+                title: "The Creative Catalyst", 
+                description: "You bring out the best in others by creating environments where collective creativity thrives. Your gift is fostering collaboration across diverse teams and helping individual talents combine to create something greater than the sum of its parts."
+            },
+            visionary: {
+                title: "The Visionary Innovator",
+                description: "You see possibilities others miss and inspire teams to push beyond conventional boundaries. Your leadership style centers on anticipating trends, challenging assumptions, and positioning your organization at the forefront of creative innovation."
+            },
+            empathetic: {
+                title: "The Collaborative Conductor",
+                description: "You create meaningful work by deeply understanding human needs and building authentic connections. Your approach focuses on the human element of creativity, ensuring that your work resonates deeply with audiences and team members alike."
+            }
+        };
+
+        // Quiz state
+        var currentQuestion = 0;
+        var answers = {};
+        var currentLead = null;
+
+        // Load leads from localStorage
+        function loadLeads() {
+            try {
+                var stored = localStorage.getItem('leadershipQuizLeads');
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        // Save leads to localStorage
+        function saveLeads(leads) {
+            try {
+                localStorage.setItem('leadershipQuizLeads', JSON.stringify(leads));
+                updateLeadsCount();
+            } catch (e) {
+                console.error('Could not save leads:', e);
+            }
+        }
+
+        // Update leads counter
+        function updateLeadsCount() {
+            var leads = loadLeads();
+            var countEl = document.getElementById('leadsCount');
+            if (countEl) {
+                countEl.textContent = leads.length + ' leads';
+            }
+        }
+
+        // Start quiz
+        function startQuiz() {
+            document.getElementById('heroSection').style.display = 'none';
+            document.getElementById('quizContainer').style.display = 'block';
+            currentQuestion = 0;
+            answers = {};
+            displayQuestion();
+        }
+
+        // Display current question
+        function displayQuestion() {
+            var question = questions[currentQuestion];
+            document.getElementById('questionText').textContent = question.question;
+            
+            var progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressText').textContent = 'Question ' + (currentQuestion + 1) + ' of ' + questions.length;
+            document.getElementById('progressPercent').textContent = Math.round(progress) + '% Complete';
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            var container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            for (var i = 0; i < question.options.length; i++) {
+                var option = question.options[i];
+                var button = document.createElement('button');
+                button.className = 'option';
+                button.textContent = option.text;
+                button.onclick = (function(style) {
+                    return function() { selectAnswer(style); };
+                })(option.style);
+                container.appendChild(button);
+            }
+        }
+
+        // Handle answer selection
+        function selectAnswer(style) {
+            answers[currentQuestion] = style;
+            
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            } else {
+                showEmailCapture();
+            }
+        }
+
+        // Show email capture
+        function showEmailCapture() {
+            document.getElementById('questionSection').style.display = 'none';
+            document.getElementById('emailSection').style.display = 'block';
+        }
+
+        // Skip email capture
+        function skipEmail() {
+            document.getElementById('emailSection').style.display = 'none';
+            showResults();
+        }
+
+        // Submit lead
+        function submitLead() {
+            var firstName = document.getElementById('firstName').value.trim();
+            var email = document.getElementById('email').value.trim();
+            
+            if (!firstName || !email) {
+                alert('Please fill in both fields');
+                return;
+            }
+
+            // Calculate leadership style
+            var style = calculateLeadershipStyle();
+            var styleData = leadershipStyles[style];
+
+            // Create lead object
+            var lead = {
+                firstName: firstName,
+                email: email,
+                leadershipStyle: styleData.title,
+                date: new Date().toLocaleString(),
+                timestamp: Date.now()
+            };
+
+            // Save lead
+            var leads = loadLeads();
+            leads.push(lead);
+            saveLeads(leads);
+            currentLead = lead;
+
+            // Display confirmation
+            var confirmationEl = document.getElementById('leadConfirmation');
+            var leadDataEl = document.getElementById('leadData');
+            
+            leadDataEl.textContent = 'Name: ' + lead.firstName + '\nEmail: ' + lead.email + '\nLeadership Style: ' + lead.leadershipStyle + '\nDate: ' + lead.date;
+            confirmationEl.classList.remove('hidden');
+
+            // Show results after delay
+            setTimeout(function() {
+                document.getElementById('emailSection').style.display = 'none';
+                showResults();
+            }, 2000);
+        }
+
+        // Calculate leadership style
+        function calculateLeadershipStyle() {
+            var counts = { strategic: 0, collaborative: 0, visionary: 0, empathetic: 0 };
+            
+            for (var i = 0; i < questions.length; i++) {
+                if (answers[i]) {
+                    counts[answers[i]]++;
+                }
+            }
+
+            var maxCount = 0;
+            var dominantStyle = 'strategic';
+            
+            for (var style in counts) {
+                if (counts[style] > maxCount) {
+                    maxCount = counts[style];
+                    dominantStyle = style;
+                }
+            }
+
+            return dominantStyle;
+        }
+
+        // Show results
+        function showResults() {
+            var style = calculateLeadershipStyle();
+            var styleData = leadershipStyles[style];
+            
+            var html = '<h2 class="results-title">' + styleData.title + '</h2>';
+            html += '<p class="results-description">' + styleData.description + '</p>';
+            
+            document.getElementById('resultsContent').innerHTML = html;
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('emailSection').style.display = 'none';
+            document.getElementById('questionSection').style.display = 'block';
+            
+            currentQuestion = 0;
+            answers = {};
+            displayQuestion();
+        }
+
+        // Copy current lead
+        function copyCurrentLead() {
+            if (!currentLead) return;
+            
+            var text = 'Name: ' + currentLead.firstName + '\nEmail: ' + currentLead.email + '\nLeadership Style: ' + currentLead.leadershipStyle + '\nDate: ' + currentLead.date;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(function() {
+                    alert('Lead data copied!');
+                });
+            } else {
+                var textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Lead data copied!');
+            }
+        }
+
+        // View all leads
+        function viewAllLeads() {
+            var leads = loadLeads();
+            var display = document.getElementById('leadsDisplay');
+            var container = document.getElementById('leadsContainer');
+            
+            if (leads.length === 0) {
+                container.innerHTML = '<p>No leads captured yet.</p>';
+            } else {
+                var html = '';
+                for (var i = leads.length - 1; i >= 0; i--) {
+                    var lead = leads[i];
+                    html += '<div style="border-bottom: 1px solid #eee; padding: 10px 0;">';
+                    html += '<strong>' + lead.firstName + '</strong> - ' + lead.email;
+                    html += '<br><small>' + lead.leadershipStyle + ' | ' + lead.date + '</small>';
+                    html += '</div>';
+                }
+                container.innerHTML = html;
+            }
+            
+            display.classList.toggle('hidden');
+        }
+
+        // Export leads to CSV
+        function exportLeads() {
+            var leads = loadLeads();
+            
+            if (leads.length === 0) {
+                alert('No leads to export');
+                return;
+            }
+
+            var csv = 'First Name,Email,Leadership Style,Date\n';
+            for (var i = 0; i < leads.length; i++) {
+                var lead = leads[i];
+                csv += '"' + lead.firstName + '","' + lead.email + '","' + lead.leadershipStyle + '","' + lead.date + '"\n';
+            }
+
+            var blob = new Blob([csv], { type: 'text/csv' });
+            var url = window.URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'leadership-quiz-leads-' + new Date().toISOString().split('T')[0] + '.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Clear all leads
+        function clearAllLeads() {
+            if (confirm('Are you sure you want to delete all lead data? This cannot be undone.')) {
+                localStorage.removeItem('leadershipQuizLeads');
+                updateLeadsCount();
+                document.getElementById('leadsDisplay').classList.add('hidden');
+                alert('All lead data has been cleared.');
+            }
+        }
+
+        // Initialize page
+        window.addEventListener('load', function() {
+            updateLeadsCount();
+            
+            // Check for admin access
+            checkAdminAccess();
+            
+            console.log('Leadership Quiz loaded successfully');
+        });
+
+        // Check for admin access
+        function checkAdminAccess() {
+            // Show admin panel if URL contains ?admin=true
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('admin') === 'true') {
+                document.getElementById('adminPanel').style.display = 'block';
+            }
+        }
+
+        // Secret admin access function (for console)
+        window.showAdmin = function() {
+            document.getElementById('adminPanel').style.display = 'block';
+            console.log('Admin panel activated');
+        };
+
+        window.hideAdmin = function() {
+            document.getElementById('adminPanel').style.display = 'none';
+            console.log('Admin panel hidden');
+        };
+    </script>
+</body>
+</html>
